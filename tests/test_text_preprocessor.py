@@ -16,16 +16,21 @@ def text_examples() -> List[str]:
     ]
 
 
-def test_stopwords_removing(text_examples: List[str]):
-    results = [TextPreprocessor.remove_stopwords(text) for text in text_examples]
+@pytest.fixture(scope="module")
+def preprocessor() -> TextPreprocessor:
+    return TextPreprocessor()
+
+
+def test_stopwords_removing(text_examples: List[str], preprocessor: TextPreprocessor):
+    results = [preprocessor._remove_stopwords(text) for text in text_examples]
     results_tokenized = [text.split(" ") for text in results]
     result_tokens = list(itertools.chain.from_iterable(results_tokenized))
     for stopword in STOPWORDS:
         assert stopword not in result_tokens
 
 
-def test_punctuation_removing(text_examples: List[str]):
-    results = [TextPreprocessor.remove_punctuation(text) for text in text_examples]
+def test_punctuation_removing(text_examples: List[str], preprocessor: TextPreprocessor):
+    results = [preprocessor._remove_punctuation(text) for text in text_examples]
     results_tokenized = [text.split(" ") for text in results]
     result_tokens = list(itertools.chain.from_iterable(results_tokenized))
     for p in punctuation:
