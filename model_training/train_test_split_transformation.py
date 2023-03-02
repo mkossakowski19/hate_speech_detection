@@ -7,9 +7,9 @@ from sklearn.model_selection import train_test_split
 class TrainValidationSplitTransformation:
     def __init__(
         self,
-        input_column_name: str = "text",
-        target_column_name: str = "label",
-        train_size: float = 0.75,
+        input_column_name: str,
+        target_column_name: str,
+        train_size: float,
         do_stratify: bool = True,
     ):
         self.input_column_name = input_column_name
