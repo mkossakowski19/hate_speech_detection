@@ -5,7 +5,7 @@ from typing import List
 import pytest
 
 from src.text_preprocessor import TextPreprocessor
-from utils.stop_words import STOPWORDS
+from src.stop_words import STOPWORDS
 
 
 @pytest.fixture(scope="module")

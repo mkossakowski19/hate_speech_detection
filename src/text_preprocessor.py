@@ -1,7 +1,7 @@
 from string import punctuation
 import re
 
-from utils.stop_words import STOPWORDS
+from src.stop_words import STOPWORDS
 
 
 class TextPreprocessor:
