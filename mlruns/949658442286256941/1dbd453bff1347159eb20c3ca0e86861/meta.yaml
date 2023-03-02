@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/mariuszkossakowski/Desktop/my_code/hate_speech_detection/mlruns/949658442286256941/1dbd453bff1347159eb20c3ca0e86861/artifacts
+end_time: 1677791546828
+entry_point_name: ''
+experiment_id: '949658442286256941'
+lifecycle_stage: active
+run_id: 1dbd453bff1347159eb20c3ca0e86861
+run_name: welcoming-shoat-44
+run_uuid: 1dbd453bff1347159eb20c3ca0e86861
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677791546790
+status: 4
+tags: []
+user_id: mariuszkossakowski
