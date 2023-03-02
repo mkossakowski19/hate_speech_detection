@@ -15,6 +15,7 @@ class ConfigParser:
             class_weight=hyperparams["model_hyperparams"]["class_weight"],
         )
         vectorizer_hyperparams = TFIDFHyperparams(
+            min_df=hyperparams["vectorizer_hyperparams"]["min_df"],
             max_df=hyperparams["vectorizer_hyperparams"]["max_df"],
             max_features=hyperparams["vectorizer_hyperparams"]["max_features"],
         )

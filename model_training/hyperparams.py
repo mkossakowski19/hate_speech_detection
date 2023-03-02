@@ -11,5 +11,6 @@ class SVMHyperparams:
 
 @dataclass
 class TFIDFHyperparams:
+    min_df: List[float]
     max_df: List[float]
     max_features: List[int]
