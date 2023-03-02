@@ -1,6 +1,9 @@
+from typing import Tuple
+
 import pytest
 
 from utils.config_parser import ConfigParser
+from utils.hyperparams import SVMHyperparams, TFIDFHyperparams
 
 
 @pytest.fixture(scope="module")
@@ -8,8 +11,28 @@ def filename() -> str:
     return "hyperparameters.yaml"
 
 
-def test_config_parser(filename: str):
-    result = ConfigParser.load_hyperparams(filename)
-    assert isinstance(result, dict)
-    assert "model_hyperparams" in result.keys()
-    assert "vectorizer_hyperparams" in result.keys()
+@pytest.fixture(scope="module")
+def hyperparams(filename: str) -> Tuple[SVMHyperparams, TFIDFHyperparams]:
+    return ConfigParser.load_hyperparams(filename)
+
+
+def test_config_parser(hyperparams: Tuple[SVMHyperparams, TFIDFHyperparams]):
+    svm_hyperparams, tfidf_hyperparams = hyperparams
+    assert isinstance(svm_hyperparams, SVMHyperparams)
+    assert isinstance(tfidf_hyperparams, TFIDFHyperparams)
+
+    assert hasattr(svm_hyperparams, "C")
+    assert hasattr(svm_hyperparams, "kernel")
+    assert hasattr(svm_hyperparams, "class_weight")
+    assert isinstance(svm_hyperparams.C, list)
+    assert isinstance(svm_hyperparams.kernel, list)
+    assert isinstance(svm_hyperparams.class_weight, str)
+    assert isinstance(svm_hyperparams.C[0], float)
+    assert isinstance(svm_hyperparams.kernel[0], str)
+
+    assert hasattr(tfidf_hyperparams, "max_df")
+    assert hasattr(tfidf_hyperparams, "max_features")
+    assert isinstance(tfidf_hyperparams.max_features, list)
+    assert isinstance(tfidf_hyperparams.max_df, list)
+    assert isinstance(tfidf_hyperparams.max_features[0], int)
+    assert isinstance(tfidf_hyperparams.max_df[0], float)
