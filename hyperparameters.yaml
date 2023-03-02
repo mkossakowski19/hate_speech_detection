@@ -1,7 +1,7 @@
 model_hyperparams:
   C: [1.0, 0.8, 0.6]
   kernel: ["linear", "rbf"]
-  class_weigth: "balanced"
+  class_weight: "balanced"
 
 vectorizer_hyperparams:
   max_df: [0.5, 0.9]
