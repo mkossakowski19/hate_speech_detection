@@ -14,7 +14,8 @@ def text_examples() -> List[str]:
         "Ja jestem ojcem Mateusza.",
         "Mateusz to mój syn.",
         "To jest zdanie testowe. \n 😀 😀 \r",
-        "https://twitter.com/ to   adres @anon_acc"
+        "https://twitter.com/ to   adres @anon_acc",
+        "#tentekst zawiera hasztagi #mlrocks",
     ]
 
 
@@ -54,12 +55,21 @@ def test_url_removing(text_examples: List[str], preprocessor: TextPreprocessor):
     assert "https://twitter.com/" not in result
 
 
-def test_special_character_removing(text_examples: List[str], preprocessor: TextPreprocessor):
+def test_special_character_removing(
+    text_examples: List[str], preprocessor: TextPreprocessor
+):
     result = preprocessor._remove_special_characters(text_examples[2])
     assert "\n" not in result
     assert "\r" not in result
 
 
-def test_redundant_spaces_removing(text_examples: List[str], preprocessor: TextPreprocessor):
+def test_redundant_spaces_removing(
+    text_examples: List[str], preprocessor: TextPreprocessor
+):
     result = preprocessor._remove_redundant_spaces(text_examples[3])
     assert result == "https://twitter.com/ to adres @anon_acc"
+
+
+def test_hashtags_removing(text_examples: List[str], preprocessor: TextPreprocessor):
+    result = preprocessor._remove_hashtags(text_examples[4])
+    assert result == "zawiera hasztagi"
