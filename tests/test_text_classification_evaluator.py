@@ -3,7 +3,7 @@ from typing import Tuple
 import numpy as np
 import pytest
 
-from utils.text_classification_evaluator import TextClassificationEvaluator
+from model_training.text_classification_evaluator import TextClassificationEvaluator
 
 
 @pytest.fixture(scope="module")

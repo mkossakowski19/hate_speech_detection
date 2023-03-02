@@ -2,8 +2,8 @@ from typing import Tuple
 
 import pytest
 
-from utils.config_parser import ConfigParser
-from utils.hyperparams import SVMHyperparams, TFIDFHyperparams
+from model_training.config_parser import ConfigParser
+from model_training.hyperparams import SVMHyperparams, TFIDFHyperparams
 
 
 @pytest.fixture(scope="module")

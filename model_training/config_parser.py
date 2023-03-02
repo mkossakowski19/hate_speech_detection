@@ -1,7 +1,7 @@
 from typing import Tuple
 import yaml
 
-from utils.hyperparams import SVMHyperparams, TFIDFHyperparams
+from model_training.hyperparams import SVMHyperparams, TFIDFHyperparams
 
 
 class ConfigParser:
