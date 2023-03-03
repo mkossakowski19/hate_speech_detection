@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/mariuszkossakowski/Desktop/my_code/hate_speech_detection/mlruns/949658442286256941/345ed3c5d15c4585851357e3332a1acd/artifacts
+end_time: 1677845029264
+entry_point_name: ''
+experiment_id: '949658442286256941'
+lifecycle_stage: active
+run_id: 345ed3c5d15c4585851357e3332a1acd
+run_name: defiant-grouse-833
+run_uuid: 345ed3c5d15c4585851357e3332a1acd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677845023151
+status: 3
+tags: []
+user_id: mariuszkossakowski
