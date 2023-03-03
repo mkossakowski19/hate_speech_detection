@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/mariuszkossakowski/Desktop/my_code/hate_speech_detection/mlruns/968010253559973683/a57b7ddb7c8249d3b415e11af0e999a6/artifacts
+end_time: 1677848573603
+entry_point_name: ''
+experiment_id: '968010253559973683'
+lifecycle_stage: active
+run_id: a57b7ddb7c8249d3b415e11af0e999a6
+run_name: trial_50
+run_uuid: a57b7ddb7c8249d3b415e11af0e999a6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677848573570
+status: 3
+tags: []
+user_id: mariuszkossakowski

@@ -1,8 +1,9 @@
 model_hyperparams:
-  C: [1.0, 0.8, 0.6]
-  kernel: ["linear", "rbf"]
-  class_weigth: "balanced"
+  C: [0.00001, 100000.0]
+  kernel: ["linear", "rbf", "poly", "sigmoid"]
+  class_weight: "balanced"
 
 vectorizer_hyperparams:
-  max_df: [0.5, 0.9]
+  min_df: [1, 10]
+  max_df: [0.5, 1.0]
   max_features: [1000, 5000]
