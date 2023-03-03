@@ -1,5 +1,5 @@
-from string import punctuation
 import re
+from string import punctuation
 
 from src.stop_words import STOPWORDS
 
