@@ -16,8 +16,8 @@ model, vectorizer = load_models("models")
 preprocessor = TextPreprocessor()
 
 
-@app.post("/detect-hate-speech")
-def get_prediction(input: InputRequest) -> Response:
+@app.post("/detect-hate-speech", response_model=Response)
+def get_prediction(input: InputRequest):
     text = input.text
     text_preprocessed = preprocessor.preprocess(text)
     text_vectorized = vectorizer.transform([text_preprocessed])
