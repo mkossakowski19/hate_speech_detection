@@ -4,8 +4,8 @@ from typing import List
 
 import pytest
 
-from src.text_preprocessor import TextPreprocessor
 from src.stop_words import STOPWORDS
+from src.text_preprocessor import TextPreprocessor
 
 
 @pytest.fixture(scope="module")
