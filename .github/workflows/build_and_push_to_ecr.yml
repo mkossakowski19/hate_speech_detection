@@ -41,7 +41,7 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
         with:
-          registry: your-ecr-registry
+          registry: 804615157644.dkr.ecr.eu-west-3.amazonaws.com/hate_speech_detector
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
