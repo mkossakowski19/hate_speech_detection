@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hate-speech-detector
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hate-speech-detector
+  template:
+    metadata:
+      labels:
+        app: hate-speech-detector
+    spec:
+      containers:
+        - name: hate-speech-detector
+          image: mariuszm19/hate-speech-detector:latest
+          ports:
+            - containerPort: 8000
