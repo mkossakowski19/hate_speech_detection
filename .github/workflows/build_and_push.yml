@@ -39,3 +39,13 @@ jobs:
       run: |
         docker build -t ${{ secrets.DOCKER_USERNAME }}/$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG .
         docker push ${{ secrets.DOCKER_USERNAME }}/$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG
+    
+    - name: Validate Kubernetes files
+      uses: instrumenta/kubeval-action@master
+      with:
+        kubeval_version: 'latest'
+        files: |
+          kubernetes/deployment.yaml
+          kubernetes/service.yaml
+          kubernetes/hpa.yaml
+          
