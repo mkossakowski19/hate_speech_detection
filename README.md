@@ -98,7 +98,7 @@ If the pod status is "Running", the service should be ready to use.
 
 ![external_ip](./pictures/pod_running.png)
 
-IMPORTANT NOTE: This deployment strategy pulls the Docker image from Docker Hub instead of depending on the one built locally. If you want to use your own image, I suggest pushing your image to Docker Hub (or any other container registry) and changing the "image" field in the [Kubernetes deployment configuration](.kubernetes/deployment.yaml).
+IMPORTANT NOTE: This deployment strategy pulls the Docker image from Docker Hub instead of depending on the one built locally. If you want to use your own image, I suggest pushing your image to Docker Hub (or any other container registry) and changing the "image" field in the [Kubernetes deployment configuration](kubernetes/deployment.yaml).
 
 ## Getting predictions from an endpoint
 
