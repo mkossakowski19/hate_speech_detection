@@ -7,7 +7,15 @@ This project is a text classification model which recognizes if a given text is:
 
 The model is deployed as a FastAPI app inside a Docker container. The repository also contains Kubernetes deployment files.
 
-##Installation
+## Table of Contents
+- [Installation](#installation)
+- [Running the app](#running-the-app)
+  - [Running the app with uvicorn](#running-the-app-with-uvicorn)
+  - [Running the app inside a Docker container](#running-the-app-inside-a-docker-container)
+  - [Running the app on a local Kubernetes cluster](#running-the-app-on-a-local-kubernetes-cluster)
+- [Getting predictions from an endpoint](#getting-predictions-from-an-endpoint)
+
+## Installation
 
 First you need to ensure you have Python installed. The project was developed on the 3.9.6 version.
 After you are sure you have Python, follow these steps:
@@ -26,9 +34,9 @@ source /venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
-##Running the app
+## Running the app
 
-###Running the app with uvicorn (without Docker)
+### Running the app with uvicorn
 1. Go to the project main directory
 2. Run the following command to run the app:
 ```
@@ -38,7 +46,7 @@ uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 ```
 http://0.0.0.0:8000/
 ```
-###Running the app inside a Docker container
+### Running the app inside a Docker container
 
 1. Go to the project main directory
 2. Build a Docker image
@@ -53,7 +61,7 @@ docker run -p 8000:8000 <your_image_name>
 ```
 http://0.0.0.0:8000/
 ```
-###Running the app on a local Kubernetes cluster
+### Running the app on a local Kubernetes cluster
 1. To run the app on Kubernetes locally, you will need minikube. [Here](https://minikube.sigs.k8s.io/docs/start/) you can find personalized installation instructions based on which OS you have.
 2. Go to the project main directory
 3. When you have minikube installed, start a local cluster by running this command:
@@ -90,7 +98,7 @@ If the pod status is "Running", the service should be ready to use.
 
 ![external_ip](./pictures/pod_running.png)
 
-##Getting predictions from an endpoint
+## Getting predictions from an endpoint
 
 The model is placed on the __/detect-hate-speech/__ endpoint. The request body the endpoint accepts is:
 ```
