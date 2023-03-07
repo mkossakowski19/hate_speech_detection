@@ -8,9 +8,9 @@ COPY src/ src/
 
 COPY app.py .
 
-COPY requirements_docker.txt .
+COPY requirements.txt .
 
-RUN pip install --upgrade pip && pip install -r requirements_docker.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # Expose port 8000 for the application
 EXPOSE 8000
